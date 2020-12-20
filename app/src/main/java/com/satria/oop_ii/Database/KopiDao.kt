@@ -15,5 +15,8 @@ interface KopiDao {
     suspend fun deleteKopi(kopi: Kopi)
 
     @Query("SELECT * FROM kopi")
-    suspend fun getAllLaptop(): List<Kopi>
+    suspend fun getKopi(): List<Kopi>
+
+    @Query("SELECT * FROM kopi WHERE id=:kopi_id")
+    suspend fun getKopi(kopi_id: Int) : List<Kopi>
 }
